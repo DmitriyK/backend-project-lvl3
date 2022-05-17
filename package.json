@@ -1,0 +1,45 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/DmitriyK/backend-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/DmitriyK/backend-project-lvl3/actions)",
+  "main": "src/index.js",
+  "bin": {
+    "page-loader": "bin/page-loader.js"
+  },
+  "scripts": {
+    "test": "jest --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitriyK/backend-project-lvl3.git"
+  },
+  "author": "Dmytro Komlyk <dima.komlyk@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitriyK/backend-project-lvl3/issues"
+  },
+  "type": "module",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "homepage": "https://github.com/DmitriyK/backend-project-lvl3#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "axios-debug-log": "^0.8.4",
+    "cheerio": "^1.0.0-rc.10",
+    "commander": "^9.2.0",
+    "debug": "^4.3.4",
+    "listr": "^0.14.3",
+    "lodash": "^4.17.21",
+    "prettier": "^2.6.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.5",
+    "jest": "^28.0.3",
+    "jest-cli": "^28.0.3",
+    "nock": "^13.2.4"
+  }
+}

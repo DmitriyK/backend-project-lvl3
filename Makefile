@@ -7,8 +7,8 @@ publish:
 lint:
 				npx eslint .
 test:
-				npm run test
+				npm run test -s
 test-coverage:
-				npm test -- --coverage --coverageProvider=v8
+				npm test -- --coverage
 .PHONY:
 				test

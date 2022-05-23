@@ -1,7 +1,7 @@
 {
-  "name": "@hexlet/code",
+  "name": "@dmitriyk/page-loader",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/DmitriyK/backend-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/DmitriyK/backend-project-lvl3/actions)",
+  "description": "Console utility that downloads pages from the Internet with all the resources and saves them on your computer",
   "main": "src/index.js",
   "bin": {
     "page-loader": "bin/page-loader.js"
@@ -11,18 +11,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DmitriyK/backend-project-lvl3.git"
+    "url": "git+https://github.com/DmitriyK/page-loader.git"
   },
   "author": "Dmytro Komlyk <dima.komlyk@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DmitriyK/backend-project-lvl3/issues"
+    "url": "https://github.com/DmitriyK/page-loader/issues"
   },
   "type": "module",
   "jest": {
     "testEnvironment": "node"
   },
-  "homepage": "https://github.com/DmitriyK/backend-project-lvl3#readme",
+  "homepage": "https://github.com/DmitriyK/page-loader#readme",
+  "engines": {
+    "node": ">=16"
+  },
   "dependencies": {
     "axios": "^0.27.2",
     "axios-debug-log": "^0.8.4",

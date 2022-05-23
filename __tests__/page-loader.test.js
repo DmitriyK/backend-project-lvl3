@@ -66,7 +66,7 @@ test('page loader', async () => {
 
 describe('Should trow errors', () => {
   test('Reguest errors', async () => {
-    scope
+    nock('https://example.com')
       .get('/no-response')
       .replyWithError('Wrong url!')
       .get('/404')
@@ -74,21 +74,19 @@ describe('Should trow errors', () => {
       .get('/500')
       .reply(500);
 
-    await expect(pageLoader('https://ru.hexlet.io/no-response', tmpDir)).rejects.toThrow('The request was made at https://ru.hexlet.io/no-response but no response was received');
-    await expect(pageLoader('https://ru.hexlet.io/404', tmpDir)).rejects.toThrow('\'https://ru.hexlet.io/404\' request failed with status code 404');
-    await expect(pageLoader('https://ru.hexlet.io/500', tmpDir)).rejects.toThrow('\'https://ru.hexlet.io/500\' request failed with status code 500');
+    await expect(pageLoader('https://example.com/no-response', tmpDir)).rejects.toThrow('The request was made at https://example.com/no-response but no response was received');
+    await expect(pageLoader('https://example.com/404', tmpDir)).rejects.toThrow('\'https://example.com/404\' request failed with status code 404');
+    await expect(pageLoader('https://example.com/500', tmpDir)).rejects.toThrow('\'https://example.com/500\' request failed with status code 500');
 
     scope.done();
   });
 
-  test('File operations errors', async () => {
-    scope
+  test('File system operations errors', async () => {
+    nock('https://example.com')
       .get('/')
-      .twice()
       .reply(200);
 
-    await expect(pageLoader('https://ru.hexlet.io', '/private')).rejects.toThrow('EACCES: permission denied, mkdir \'/private/ru-hexlet-io_files\'');
-    await expect(pageLoader('https://ru.hexlet.io', '/notExistingFolder')).rejects.toThrow('ENOENT: no such file or directory, mkdir \'/notExistingFolder/ru-hexlet-io_files\'');
+    await expect(pageLoader('https://example.com', '/notExistingFolder')).rejects.toThrow('ENOENT: no such file or directory, mkdir \'/notExistingFolder/example-com_files\'');
 
     scope.done();
   });

@@ -6,7 +6,7 @@ import nock from 'nock';
 import prettier from 'prettier';
 import pageLoader from '../src/index.js';
 
-const link = 'https://ru.hexlet.io/';
+const link = 'https://ru.hexlet.io';
 const scope = nock(link);
 
 const filePath = fileURLToPath(import.meta.url);

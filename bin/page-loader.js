@@ -11,7 +11,7 @@ program
   .version('0.0.1')
   .option('-v, --version', 'output the version [version]', 'version')
   .option('-o, --output [dir]', 'output dir', process.cwd())
-  .arguments('<pageUrl>')
+  .argument('<pageUrl>')
   .action((pageUrl) => {
     pageLoader(pageUrl, program.opts().output)
       .then(() => console.log('Page was successfully downloaded'))

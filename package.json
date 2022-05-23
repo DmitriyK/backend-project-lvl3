@@ -7,7 +7,7 @@
     "page-loader": "bin/page-loader.js"
   },
   "scripts": {
-    "test": "jest --colors"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

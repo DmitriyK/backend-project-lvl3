@@ -57,8 +57,6 @@ test('page loader', async () => {
   expect(css).toEqual(expectedValues.css);
   expect(js).toEqual(expectedValues.js);
   expect(canonical).toEqual(expectedValues.canonical);
-
-  nock.done();
 });
 
 describe('Should trow errors', () => {
@@ -74,8 +72,6 @@ describe('Should trow errors', () => {
     await expect(pageLoader('https://example.com/no-response', tmpDir)).rejects.toThrow('The request was made at https://example.com/no-response but no response was received');
     await expect(pageLoader('https://example.com/404', tmpDir)).rejects.toThrow('\'https://example.com/404\' request failed with status code 404');
     await expect(pageLoader('https://example.com/500', tmpDir)).rejects.toThrow('\'https://example.com/500\' request failed with status code 500');
-
-    nock.done();
   });
 
   test('File system operations errors', async () => {
@@ -84,7 +80,5 @@ describe('Should trow errors', () => {
       .reply(200);
 
     await expect(pageLoader('https://example.com', '/notExistingFolder')).rejects.toThrow('ENOENT: no such file or directory, mkdir \'/notExistingFolder/example-com_files\'');
-
-    nock.done();
   });
 });

@@ -16,7 +16,7 @@ This is a command line utility that downloads pages from the Internet and saves 
 
 ## About project
 
-This pet-project was created as part of the [Hexlet](https://ru.hexlet.io/) curriculum.
+This pet-project was created as part of the [Hexlet](https://ru.hexlet.io/programs/backend/projects/4) curriculum.
 
 ## Requirements
 

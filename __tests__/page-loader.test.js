@@ -6,9 +6,6 @@ import nock from 'nock';
 import prettier from 'prettier';
 import pageLoader from '../src/index.js';
 
-const link = 'https://ru.hexlet.io';
-const scope = nock(link);
-
 const filePath = fileURLToPath(import.meta.url);
 const getFixturesFilesPath = (name) => path.join(path.dirname(filePath), '..', '__fixtures__', name);
 const getRootPath = (dirpath, filename) => path.join(dirpath, 'ru-hexlet-io-courses_files', filename);
@@ -35,7 +32,7 @@ beforeEach(async () => {
 });
 
 test('page loader', async () => {
-  scope
+  nock('https://ru.hexlet.io')
     .get('/courses')
     .reply(200, beforeHtml)
     .get('/assets/professions/nodejs.png')
@@ -61,7 +58,7 @@ test('page loader', async () => {
   expect(js).toEqual(expectedValues.js);
   expect(canonical).toEqual(expectedValues.canonical);
 
-  scope.done();
+  nock.done();
 });
 
 describe('Should trow errors', () => {
@@ -78,7 +75,7 @@ describe('Should trow errors', () => {
     await expect(pageLoader('https://example.com/404', tmpDir)).rejects.toThrow('\'https://example.com/404\' request failed with status code 404');
     await expect(pageLoader('https://example.com/500', tmpDir)).rejects.toThrow('\'https://example.com/500\' request failed with status code 500');
 
-    scope.done();
+    nock.done();
   });
 
   test('File system operations errors', async () => {
@@ -88,6 +85,6 @@ describe('Should trow errors', () => {
 
     await expect(pageLoader('https://example.com', '/notExistingFolder')).rejects.toThrow('ENOENT: no such file or directory, mkdir \'/notExistingFolder/example-com_files\'');
 
-    scope.done();
+    nock.done();
   });
 });

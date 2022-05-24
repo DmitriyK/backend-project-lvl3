@@ -1,3 +1,6 @@
+<div align="center">
+  <img alt="page-loader" title="page-loader" src="https://cdn-icons-png.flaticon.com/512/7044/7044013.png" width="150">
+</div>
 
 <div align="center">
 
@@ -11,11 +14,15 @@
 
 This is a command line utility that downloads pages from the Internet and saves them to your computer. Together with the page, it downloads all assets (images, styles and js) making it possible to open the page without the Internet. The same principle is used to save pages in the browser.
 
+## About project
+
+This pet-project was created as part of the [Hexlet](https://ru.hexlet.io/) curriculum.
+
 ## Requirements
 
 - Node (v.16+)
 
-## Install
+## Getting started
 
 ```sh
 git clone https://github.com/DmitriyK/page-loader.git
@@ -46,8 +53,10 @@ Options:
 
 ## Examples
 
-### Installing
-
 ### Workflow
 
+[![asciicast](https://asciinema.org/a/496822.svg)](https://asciinema.org/a/496822)
+
 ### Debug
+
+[![asciicast](https://asciinema.org/a/496824.svg)](https://asciinema.org/a/496824)
